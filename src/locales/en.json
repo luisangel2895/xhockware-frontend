@@ -1,6 +1,22 @@
 {
   "home": {
-    "title": "Angel News",
-    "subtitle": "The best news in the world"
+    "title": "Browse",
+    "subtitle": "Discover things of this world",
+    "placeholder": "Search"
+  },
+  "favorites": {
+    "title": "Favorites",
+    "subtitle": "Saved your favorites news"
+  },
+  "profile": {
+    "title": "Profile",
+    "notifications": "Notifications",
+    "language": {
+      "title": "Language",
+      "english": "Engish",
+      "spanish": "Spanish",
+      "portuguese": "Portuguese"
+    },
+    "terms": "Terms & Conditions"
   }
 }

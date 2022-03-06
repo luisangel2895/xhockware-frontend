@@ -35,13 +35,17 @@ html {
   font-family: SF-Medium;
   src: url("/fonts/SF-Pro-Display-Medium.otf");
 }
+@font-face {
+  font-family: SF-Bold;
+  src: url("/fonts/SF-Pro-Display-Bold.otf");
+}
 $semibold: SF-Semibold, "Roboto";
 $regular: SF-Regular, "Roboto";
 $medium: SF-Medium, "Roboto";
-
+$bold: SF-Bold, "Roboto";
 // /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
   background-color: rgba(0, 0, 0, 0);
 }
 // ::-webkit-scrollbar-track:horizontal {

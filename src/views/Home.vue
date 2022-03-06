@@ -1,7 +1,7 @@
 <template lang="pug">
 section.home
-  .home__title Browse
-  .home__subtitle Discover thigs of this world
+  .home__title {{ $t("home.title") }}
+  .home__subtitle {{ $t("home.subtitle") }}
   box-search
   categories
   news-container

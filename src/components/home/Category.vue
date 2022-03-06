@@ -3,6 +3,7 @@
 </template>
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import { mapActions, mapGetters } from "vuex";
 // Types
 import { CategoryType } from "@/types/category";
 
@@ -10,18 +11,37 @@ import { CategoryType } from "@/types/category";
   props: {
     category: Object,
   },
+  watch: {
+    getCleanCategory(value) {
+      console.log(value);
+      if (this.category.active) {
+        this.category.active = false;
+        this.currenPurple = false;
+        this.currentGray = true;
+        this.active = false;
+      }
+    },
+  },
+  computed: mapGetters(["getCleanCategory", "getCategories"]),
+  methods: mapActions(["addCategory", "deleteCategory"]),
 })
 export default class Category extends Vue {
   category!: CategoryType;
   currenPurple = false;
   currentGray = false;
+  addCategory!: (category: string) => void;
+  deleteCategory!: (category: string) => void;
+  getCategories!: string[];
+
   selectCategory(): void {
     if (this.category.active) {
       this.currenPurple = false;
       this.currentGray = true;
+      this.deleteCategory(this.category.category.toLowerCase());
     } else {
       this.currenPurple = true;
       this.currentGray = false;
+      this.addCategory(this.category.category.toLowerCase());
     }
     this.category.active = !this.category.active;
   }

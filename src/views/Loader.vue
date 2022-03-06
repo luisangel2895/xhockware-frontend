@@ -29,6 +29,10 @@ export default class Loader extends Vue {
   mounted(): void {
     this.demo();
   }
+
+  beforeUnmount(): void {
+    this.$router.push("/");
+  }
 }
 </script>
 
@@ -42,6 +46,8 @@ export default class Loader extends Vue {
   align-items: center;
   justify-content: center;
   background-color: $purple_primary;
+  animation-name: disvanecense;
+  animation-duration: 3s;
   &__box {
     &-icon {
       text-align: center;
@@ -64,6 +70,23 @@ export default class Loader extends Vue {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes disvanecense {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 </style>

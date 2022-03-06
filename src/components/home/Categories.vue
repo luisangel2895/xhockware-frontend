@@ -1,48 +1,17 @@
 <template lang="pug">
 .categories
-	category(v-for="(category, index) in categoriesArray" :key="index" :category="category")
+	category(v-for="(category, index) in getAllCategories" :key="index" :category="category")
 </template>
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import { mapGetters } from "vuex";
 import Category from "@/components/home/Category.vue";
-// Types
-import { CategoryType } from "@/types/category";
 
 @Options({
   components: { Category },
+  computed: mapGetters(["getAllCategories"]),
 })
-export default class Categories extends Vue {
-  categoriesArray: CategoryType[] = [
-    {
-      category: "All",
-      active: true,
-    },
-    {
-      category: "Politic",
-      active: false,
-    },
-    {
-      category: "Magazine",
-      active: false,
-    },
-    {
-      category: "Fashion",
-      active: false,
-    },
-    {
-      category: "Art",
-      active: false,
-    },
-    {
-      category: "Cinema",
-      active: false,
-    },
-    {
-      category: "Economy",
-      active: false,
-    },
-  ];
-}
+export default class Categories extends Vue {}
 </script>
 
 <style lang="scss" scoped>

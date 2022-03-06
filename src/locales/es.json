@@ -1,0 +1,22 @@
+{
+  "home": {
+    "title": "Buscar",
+    "subtitle": "Descubre nuevas cosas del mundo",
+    "placeholder": "Buscar"
+  },
+  "favorites": {
+    "title": "Favoritos",
+    "subtitle": "Guarda tus noticias favoritas"
+  },
+  "profile": {
+    "title": "Perfil",
+    "notifications": "Notificaciones",
+    "language": {
+      "title": "Lenguajes",
+      "english": "Ingles",
+      "spanish": "Español",
+      "portuguese": "Portuguese"
+    },
+    "terms": "Terminos & Condiciones"
+  }
+}

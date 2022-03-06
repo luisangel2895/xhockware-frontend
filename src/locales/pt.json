@@ -1,6 +1,22 @@
 {
   "home": {
-    "title": "Notícias do Anjo",
-    "subtitle": "A melhor notícia do mundo"
+    "title": "Surfar",
+    "subtitle": "Descubra coisas novas no mundo",
+    "placeholder": "Procurar"
+  },
+  "favorites": {
+    "title": "Favoritas",
+    "subtitle": "Salve suas notícias favoritas"
+  },
+  "profile": {
+    "title": "Perfil",
+    "notifications": "Notificações",
+    "language": {
+      "title": "Línguas",
+      "english": "Inglês",
+      "spanish": "Espanhol",
+      "portuguese": "Português"
+    },
+    "terms": "Termos & Condições"
   }
 }

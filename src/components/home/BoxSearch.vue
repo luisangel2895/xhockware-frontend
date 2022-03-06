@@ -1,15 +1,33 @@
 <template lang="pug">
 .box-search
-	img(src="@/assets/extra-icons/search.png").box-search__icon-search
-	input(type="text" placeholder="Search").box-search__content
+	font-awesome-icon(:icon="['fa', 'magnifying-glass']" @click="searchWord").box-search__icon-search
+	input(type="text" :placeholder=`$t("home.placeholder")` v-model="word" @keypress="enterSearch").box-search__content
 	img(src="@/assets/extra-icons/mic.png").box-search__icon-mic
 
 </template>
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import { mapActions } from "vuex";
+// Types
+import { EventKeyPress } from "@/types/event-keypress";
 
-@Options({})
-export default class BoxSearch extends Vue {}
+@Options({
+  methods: mapActions(["getNews"]),
+})
+export default class BoxSearch extends Vue {
+  word = "";
+  getNews!: (word: string) => void;
+
+  searchWord(): void {
+    this.getNews(this.word);
+  }
+
+  enterSearch(event: EventKeyPress): void {
+    if (event.code === "Enter") {
+      this.getNews(this.word);
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -21,11 +39,12 @@ export default class BoxSearch extends Vue {}
   border-radius: 10px;
   background-color: $grey_lighter;
   margin-top: 30px;
+  align-items: center;
 
   &__icon-search {
-    cursor: pointer;
+    font-size: 1.6rem;
+    color: $grey_primary;
   }
-
   &__content {
     width: 100%;
     margin: 0px 10px 0px 10px;
