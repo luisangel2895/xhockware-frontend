@@ -1,20 +1,22 @@
 <template lang="pug">
-section.news-detail(:class="[{'hide-fragment': !statusFragment}]")
-  .news-detail__header
-    font-awesome-icon(:icon="['fa', 'arrow-left']" @click="goBack")
-  .news-detail__image-container
-    img(:src="getNewsDetail.urlToImage")
-  .news-detail__title-container
-    .news-detail__title-container-inner
-      span.news-detail__title-container-category {{filterCategory()}}
-      .news-detail__title-container-title {{getNewsDetail.title}}
-      .news-detail__title-container-author-container
-        .news-detail__title-container-author-image
-          img(src="https://avatars.githubusercontent.com/u/16966767?s=400&u=79dcf22740f8a150d19477cdb43e507aa327ff16&v=4")
-        .news-detail__title-container-author-author
-          .news-detail__title-container-author-author-name {{getNewsDetail.author}}
-          .news-detail__title-container-author-author-media {{getNewsDetail.source.name}}
-  .news-detail__text {{getNewsDetail.content}}
+section
+  .news-detail(:class="[{'hide-fragment': !statusFragment}]" v-if="getNewsDetail.category")
+    .news-detail__header
+      font-awesome-icon(:icon="['fa', 'arrow-left']" @click="goBack")
+    .news-detail__image-container
+      img(:src="getNewsDetail.urlToImage")
+    .news-detail__title-container
+      .news-detail__title-container-inner
+        span.news-detail__title-container-category {{filterCategory()}}
+        .news-detail__title-container-title {{getNewsDetail.title}}
+        .news-detail__title-container-author-container
+          .news-detail__title-container-author-image
+            img(src="https://avatars.githubusercontent.com/u/16966767?s=400&u=79dcf22740f8a150d19477cdb43e507aa327ff16&v=4")
+          .news-detail__title-container-author-author
+            .news-detail__title-container-author-author-name {{getNewsDetail.author}}
+            .news-detail__title-container-author-author-media {{getNewsDetail.source.name}}
+    .news-detail__text {{getNewsDetail.content}}
+  .default-message-detail(v-else) No news selected, please select one news
 </template>
 
 <script lang="ts">
@@ -48,6 +50,16 @@ export default class NewsDetail extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.default-message-detail {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $regular;
+  font-size: 1.6rem;
+  color: $grey_primary;
+}
 .news-detail {
   position: fixed;
   z-index: 7;
@@ -290,6 +302,65 @@ export default class NewsDetail extends Vue {
   }
   to {
     color: $black_primary;
+  }
+}
+// Tablet
+@media (min-width: 768px) {
+  .news-detail {
+    width: 70%;
+    padding-bottom: 50px;
+    animation-name: show-fragment-tablet;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  .hide-fragment {
+    animation-name: hide-fragment-tablet;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes show-fragment-tablet {
+    from {
+      right: -70%;
+    }
+    to {
+      right: 0%;
+    }
+  }
+  @keyframes hide-fragment-tablet {
+    from {
+      right: 0%;
+    }
+    to {
+      right: -70%;
+    }
+  }
+}
+// PC
+@media (min-width: 1300px) {
+  .news-detail {
+    width: 40%;
+    padding-bottom: 50px;
+    animation-name: show-fragment-pc;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;
+    &__header {
+      display: none;
+    }
+    &__title-container {
+      padding-top: 70px;
+    }
+    &__text {
+      margin-top: 400px;
+    }
+  }
+
+  @keyframes show-fragment-pc {
+    from {
+      right: 0%;
+    }
+    to {
+      right: 0%;
+    }
   }
 }
 </style>

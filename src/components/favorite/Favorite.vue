@@ -64,4 +64,16 @@ export default class Favorite extends Vue {
     }
   }
 }
+// Tablet
+@media (min-width: 768px) {
+  .favorite {
+    width: 33.3%;
+  }
+}
+// PC
+@media (min-width: 1300px) {
+  .favorite {
+    width: 100%;
+  }
+}
 </style>

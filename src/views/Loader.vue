@@ -41,7 +41,7 @@ export default class Loader extends Vue {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 5;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;

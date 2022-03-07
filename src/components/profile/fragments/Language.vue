@@ -152,4 +152,65 @@ export default class Language extends Vue {
     background-color: $purple_primary;
   }
 }
+// Tablet
+@media (min-width: 768px) {
+  .language {
+    width: 30%;
+    animation-name: show-fragment-tablet;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  .hide-fragment {
+    animation-name: hide-fragment-tablet;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes show-fragment-tablet {
+    from {
+      left: -30%;
+    }
+    to {
+      left: 0%;
+    }
+  }
+  @keyframes hide-fragment-tablet {
+    from {
+      left: 0%;
+    }
+    to {
+      left: -30%;
+    }
+  }
+}
+// PC
+@media (min-width: 1300px) {
+  .language {
+    width: 20%;
+    animation-name: show-fragment-pc;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    z-index: 50;
+  }
+  .hide-fragment {
+    animation-name: hide-fragment-pc;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes show-fragment-pc {
+    from {
+      left: -20%;
+    }
+    to {
+      left: 0%;
+    }
+  }
+  @keyframes hide-fragment-pc {
+    from {
+      left: 0%;
+    }
+    to {
+      left: -20%;
+    }
+  }
+}
 </style>

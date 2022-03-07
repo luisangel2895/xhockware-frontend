@@ -137,4 +137,11 @@ export default class News extends Vue {
     color: $grey_primary;
   }
 }
+
+// For tablets
+@media (min-width: 768px) {
+  .news {
+    width: 50%;
+  }
+}
 </style>

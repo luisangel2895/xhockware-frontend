@@ -1,6 +1,6 @@
 <template lang="pug">
 .categories
-	category(v-for="(category, index) in getAllCategories" :key="index" :category="category")
+	category(v-for="(category, index) in getCategories" :key="index" :category="category")
 </template>
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
@@ -9,7 +9,7 @@ import Category from "@/components/home/Category.vue";
 
 @Options({
   components: { Category },
-  computed: mapGetters(["getAllCategories"]),
+  computed: mapGetters(["getCategories"]),
 })
 export default class Categories extends Vue {}
 </script>

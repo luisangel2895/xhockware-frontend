@@ -97,4 +97,65 @@ export default class Terms extends Vue {
     left: 100%;
   }
 }
+// Tablet
+@media (min-width: 768px) {
+  .term {
+    width: 30%;
+    animation-name: show-fragment-tablet;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  .hide-fragment {
+    animation-name: hide-fragment-tablet;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes show-fragment-tablet {
+    from {
+      left: -30%;
+    }
+    to {
+      left: 0%;
+    }
+  }
+  @keyframes hide-fragment-tablet {
+    from {
+      left: 0%;
+    }
+    to {
+      left: -30%;
+    }
+  }
+}
+// PC
+@media (min-width: 1300px) {
+  .term {
+    width: 20%;
+    height: 400px;
+    animation-name: show-fragment-pc;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  .hide-fragment {
+    animation-name: hide-fragment-pc;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes show-fragment-pc {
+    from {
+      left: -20%;
+    }
+    to {
+      left: 0%;
+    }
+  }
+  @keyframes hide-fragment-pc {
+    from {
+      left: 0%;
+    }
+    to {
+      left: -20%;
+    }
+  }
+}
 </style>

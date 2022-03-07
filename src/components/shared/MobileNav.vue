@@ -5,7 +5,7 @@ nav
       font-awesome-icon(:icon="['far', 'newspaper']")
     .mobile-nav__link(@click="goFavorites" :class="[{'paint-icon' :inFavorites }]")
       font-awesome-icon(:icon="['far', 'heart']")
-    .mobile-nav__link(@click="goProfile" :class="[{'paint-icon' :inProfile }]")
+    .mobile-nav__link.link-profile(@click="goProfile" :class="[{'paint-icon' :inProfile }]")
       font-awesome-icon(:icon="['far', 'user']")
   .animation-nav
     .animation-nav__line(:class="[{'home-fav' :beforeHome && inFavorites }, {'home-profile' :beforeHome && inProfile }, {'fav-home' :beforeFavorites && inHome }, {'fav-profile' :beforeFavorites && inProfile }, {'profile-home' :beforeProfile && inHome }, {'profile-fav' :beforeProfile && inFavorites }]")
@@ -250,6 +250,21 @@ export default class MobileNav extends Vue {
   100% {
     left: 33%;
     width: 33%;
+  }
+}
+// Tablet
+@media (min-width: 768px) {
+  .mobile-nav {
+    z-index: 10;
+  }
+  .link-profile {
+    display: none;
+  }
+}
+// PC
+@media (min-width: 1300px) {
+  nav {
+    display: none;
   }
 }
 </style>

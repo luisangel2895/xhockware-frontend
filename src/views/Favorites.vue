@@ -18,6 +18,7 @@ export default class Favorites extends Vue {}
 
 <style lang="scss" scoped>
 .favorites {
+  display: block;
   padding: 30px 20px 20px 20px;
   &__title {
     font-size: 2.4rem;
@@ -29,6 +30,28 @@ export default class Favorites extends Vue {}
     font-family: $regular;
     color: $grey_primary;
     margin-top: 10px;
+  }
+}
+// Tablet
+@media (min-width: 768px) {
+  .favorites {
+    &__title {
+      text-align: center;
+    }
+    &__subtitle {
+      text-align: center;
+    }
+  }
+}
+// PC
+@media (min-width: 1300px) {
+  .favorites {
+    &__title {
+      text-align: left;
+    }
+    &__subtitle {
+      text-align: left;
+    }
   }
 }
 </style>

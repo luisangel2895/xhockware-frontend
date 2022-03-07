@@ -7,24 +7,35 @@
 </template>
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 // Types
 import { EventKeyPress } from "@/types/event-keypress";
 
 @Options({
   methods: mapActions(["getNews"]),
+  computed: mapGetters(["getCategories"]),
 })
 export default class BoxSearch extends Vue {
   word = "";
   getNews!: (word: string) => void;
+  // eslint-disable-next-line
+  getCategories!: any;
+
+  cleanCategories(): void {
+    for (const categoryName in this.getCategories) {
+      this.getCategories[categoryName].status = false;
+    }
+  }
 
   searchWord(): void {
     this.getNews(this.word);
+    this.cleanCategories();
   }
 
   enterSearch(event: EventKeyPress): void {
     if (event.code === "Enter") {
       this.getNews(this.word);
+      this.cleanCategories();
     }
   }
 }

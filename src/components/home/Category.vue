@@ -1,49 +1,41 @@
 <template lang="pug">
-.category(@click="selectCategory" :class="[{'category-selected': category.active }, {'change-color': currenPurple}, {'change-color-reverse': currentGray}]") {{ category.category }}
+.category(@click="selectCategory" :class="[{'category-selected': category.status }, {'change-color': currenPurple}, {'change-color-reverse': currentGray}]") {{ filterCategory() }}
 </template>
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import { mapActions, mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 // Types
-import { CategoryType } from "@/types/category";
+import { Category as CategoryType } from "@/types/category";
 
 @Options({
   props: {
     category: Object,
   },
-  watch: {
-    getCleanCategory(value) {
-      console.log(value);
-      if (this.category.active) {
-        this.category.active = false;
-        this.currenPurple = false;
-        this.currentGray = true;
-        this.active = false;
-      }
-    },
-  },
-  computed: mapGetters(["getCleanCategory", "getCategories"]),
-  methods: mapActions(["addCategory", "deleteCategory"]),
+  computed: mapGetters(["getCategories"]),
+  methods: mapMutations(["UPDATE_NEWS_CATEGORY"]),
 })
 export default class Category extends Vue {
   category!: CategoryType;
   currenPurple = false;
   currentGray = false;
-  addCategory!: (category: string) => void;
-  deleteCategory!: (category: string) => void;
-  getCategories!: string[];
+  getCategories!: CategoryType[];
+  UPDATE_NEWS_CATEGORY!: () => void | number;
 
   selectCategory(): void {
-    if (this.category.active) {
+    if (this.category.status) {
       this.currenPurple = false;
       this.currentGray = true;
-      this.deleteCategory(this.category.category.toLowerCase());
     } else {
       this.currenPurple = true;
       this.currentGray = false;
-      this.addCategory(this.category.category.toLowerCase());
     }
-    this.category.active = !this.category.active;
+    this.category.status = !this.category.status;
+    this.UPDATE_NEWS_CATEGORY();
+  }
+
+  filterCategory(): string {
+    const word = this.category.name;
+    return word.charAt(0).toUpperCase() + word.slice(1);
   }
 }
 </script>

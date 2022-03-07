@@ -1,8 +1,9 @@
 import { createStore } from "vuex";
 import { getNewsService } from "@/services/news-service";
+
 // Types
 import { News } from "@/types/news-response";
-import { CategoryType } from "@/types/category";
+import { AllCategories } from "@/types/category";
 
 export default createStore({
   state: {
@@ -16,40 +17,39 @@ export default createStore({
     news: [] as News[],
     totalNews: [] as News[],
     newsDetail: {} as News,
-    categories: ["all"] as string[],
     showLoader: false,
-    cleanCategories: 0,
     favoriteNews: [] as News[],
-    allCategories: [
-      {
-        category: "all",
-        active: true,
+    categories: {
+      all: {
+        name: "all",
+        status: true,
       },
-      {
-        category: "health",
-        active: false,
+      health: {
+        name: "health",
+        status: false,
       },
-      {
-        category: "economy",
-        active: false,
+      economy: {
+        name: "economy",
+        status: false,
       },
-      {
-        category: "tecnology",
-        active: false,
+      tecnology: {
+        name: "tecnology",
+        status: false,
       },
-      {
-        category: "politics",
-        active: false,
+      politics: {
+        name: "politics",
+        status: false,
       },
-      {
-        category: "ecology",
-        active: false,
+      ecology: {
+        name: "ecology",
+        status: false,
       },
-      {
-        category: "social",
-        active: false,
+      social: {
+        name: "social",
+        status: false,
       },
-    ] as CategoryType[],
+    } as AllCategories,
+    word: "",
   },
   getters: {
     getShowFragmentLanguage: (state) => state.showFragmentLanguage,
@@ -62,10 +62,8 @@ export default createStore({
     getAllNews: (state) => state.news,
     getNewsDetail: (state) => state.newsDetail,
     getShowLoader: (state) => state.showLoader,
-    getCleanCategory: (state) => state.cleanCategories,
     getFavoriteNews: (state) => state.favoriteNews,
     getCategories: (state) => state.categories,
-    getAllCategories: (state) => state.allCategories,
   },
   mutations: {
     UPDATE_STATUS_FRAGMENT_LANGUAGE(state, payload) {
@@ -87,8 +85,6 @@ export default createStore({
     },
     UPDATE_SEARCH_NEWS(state, payload) {
       state.news = payload;
-      state.cleanCategories += 1;
-      state.categories = [];
     },
     UPDATE_NEWS_DETAIL(state, payload) {
       state.newsDetail = payload;
@@ -96,48 +92,36 @@ export default createStore({
     SET_TOTAL_NEWS(state, payload) {
       state.totalNews = payload;
     },
-    ADD_CATEGORY(state, payload) {
-      const existCategory = state.categories.some((category: string) => {
-        return category === payload;
-      });
-      if (!existCategory) {
-        state.categories.push(payload);
-        console.log(state.categories);
-      }
-    },
-    DELETE_CATEGORY(state, payload) {
-      state.categories = state.categories.filter((category: string) => {
-        return category !== payload;
-      });
-      console.log(state.categories);
-    },
-    UPDATE_NEWS_CATEGORY(state) {
-      const isAllSelected = state.categories.some(
-        (category: string) => category === "all"
-      );
-      if (isAllSelected) {
-        state.news = state.totalNews;
-      } else {
-        const newsFilter: News[] = [];
-        state.totalNews.forEach((news: News) => {
-          for (const category of state.categories) {
-            if (news.category === category) {
-              newsFilter.push(news);
-            }
-          }
-        });
-        state.news = newsFilter;
-      }
-    },
     ADD_FAVORITE(state, payload) {
       state.favoriteNews.push(payload);
-      console.log(state.favoriteNews);
     },
     DELETE_FAVORITE(state, payload) {
       state.favoriteNews = state.favoriteNews.filter((news: News) => {
         return news.source.id !== payload.source.id;
       });
-      console.log(state.favoriteNews);
+    },
+    UPDATE_NEWS_CATEGORY(state) {
+      // eslint-disable-next-line
+      const categories: any = state.categories;
+      const newNews: News[] = [];
+      //  Complexity Time 0(n)
+      for (const categoryName in categories) {
+        const category = categories[categoryName];
+        if (category.status === true) {
+          if (category.name === "all") {
+            state.news = state.totalNews;
+            return 0;
+          } else {
+            const arr = state.totalNews.filter((news: News) => {
+              return news.category == category.name;
+            });
+            for (const news of arr) {
+              newNews.push(news);
+            }
+          }
+        }
+      }
+      state.news = newNews;
     },
   },
   actions: {
@@ -148,18 +132,6 @@ export default createStore({
         commit("SET_TOTAL_NEWS", news);
       }
       commit("UPDATE_SEARCH_NEWS", news);
-      state.showLoader = false;
-    },
-    addCategory({ commit, state }, payload: string) {
-      state.showLoader = true;
-      commit("ADD_CATEGORY", payload);
-      commit("UPDATE_NEWS_CATEGORY");
-      state.showLoader = false;
-    },
-    deleteCategory({ commit, state }, payload: string) {
-      state.showLoader = true;
-      commit("DELETE_CATEGORY", payload);
-      commit("UPDATE_NEWS_CATEGORY");
       state.showLoader = false;
     },
   },
