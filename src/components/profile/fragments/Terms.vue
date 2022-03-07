@@ -135,6 +135,17 @@ export default class Terms extends Vue {
     animation-name: show-fragment-pc;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+    padding-top: 0px;
+    &__title {
+      padding-top: 40px;
+      padding-right: 20px;
+      width: 20%;
+      position: fixed;
+      background-color: $white;
+    }
+    &__text {
+      margin-top: 80px;
+    }
   }
   .hide-fragment {
     animation-name: hide-fragment-pc;

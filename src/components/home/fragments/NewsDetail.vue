@@ -347,10 +347,21 @@ export default class NewsDetail extends Vue {
       display: none;
     }
     &__title-container {
-      padding-top: 70px;
+      animation-name: title-container-pc;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+    }
+    &__image-container {
+      img {
+        animation-name: change-imag-pc;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+      }
     }
     &__text {
-      margin-top: 400px;
+      animation-name: change-text-pc;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
     }
   }
 
@@ -360,6 +371,45 @@ export default class NewsDetail extends Vue {
     }
     to {
       right: 0%;
+    }
+  }
+  @keyframes change-image-pc {
+    0% {
+      height: 350px;
+      border-radius: 0px;
+    }
+    50% {
+      height: 350px;
+      border-radius: 0px;
+    }
+    to {
+      height: 3500px;
+      border-radius: 20px;
+    }
+  }
+  @keyframes title-container-pc {
+    0% {
+      position: absolute;
+      height: 320px;
+    }
+    50% {
+      position: absolute;
+      height: 320px;
+    }
+    to {
+      position: absolute;
+      height: 700px;
+    }
+  }
+  @keyframes change-text-pc {
+    0% {
+      margin-top: 330px;
+    }
+    50% {
+      margin-top: 330px;
+    }
+    to {
+      margin-top: 680px;
     }
   }
 }
