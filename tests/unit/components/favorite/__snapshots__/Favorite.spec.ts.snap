@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in view Favorite.vue Match with snapshot 1`] = `
+<div class="favorite">
+  <div class="favorite__img">
+    <div class="img-container"><img src="https://images.wsj.net/im-466867/social"></div>
+  </div>
+  <div class="favorite__text">
+    <div class="favorite__text-category">Tecnology</div>
+    <div class="favorite__text-title">Second Life Founder Returns to Take On t ...</div>
+  </div>
+</div>
+`;

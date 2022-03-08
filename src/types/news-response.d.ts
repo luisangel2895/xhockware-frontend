@@ -12,19 +12,11 @@ export interface News {
   description: string;
   url: string;
   urlToImage: string;
-  publishedAt: Date;
+  publishedAt: string;
   content: string;
 }
 
 export interface Source {
-  id: ID;
-  name: Name;
-}
-
-export enum ID {
-  TheWallStreetJournal = "the-wall-street-journal",
-}
-
-export enum Name {
-  TheWallStreetJournal = "The Wall Street Journal",
+  id: string;
+  name: string;
 }

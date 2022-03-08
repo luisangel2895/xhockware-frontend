@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in view Loader.vue Match with snapshot 1`] = `
+<div class="loader-page">
+  <div class="loader-page__box">
+    <div class="loader-page__box-icon"><img></div>
+    <div class="loader-page__box-title"></div>
+  </div>
+</div>
+`;

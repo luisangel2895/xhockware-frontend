@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import { mapActions, mapGetters } from "vuex";
+import { mapActions } from "vuex";
 import MobileNav from "@/components/shared/MobileNav.vue";
 import Loader from "@/views/Loader.vue";
 
@@ -17,7 +17,6 @@ import Loader from "@/views/Loader.vue";
     MobileNav,
     Loader,
   },
-  computed: mapGetters(["getAllNews"]),
   methods: mapActions(["getNews"]),
 })
 export default class App extends Vue {

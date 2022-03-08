@@ -6,10 +6,11 @@ section
     .home-favorites
       favorites
   .home
-    .home__title {{ $t("home.title") }}
-    .home__subtitle {{ $t("home.subtitle") }}
-    box-search
-    categories
+    .container-search
+      .home__title {{ $t("home.title") }}
+      .home__subtitle {{ $t("home.subtitle") }}
+      box-search
+      categories
     news-container
   .home-detail-news-container
     .home-detail-news
@@ -86,7 +87,14 @@ export default class Home extends Vue {}
   section {
     display: flex;
   }
-
+  .container-search {
+    width: 38%;
+    position: fixed;
+    top: 0px;
+    z-index: 20;
+    padding-top: 30px;
+    background-color: $white;
+  }
   .home-menu-container {
     width: 20%;
     display: block;

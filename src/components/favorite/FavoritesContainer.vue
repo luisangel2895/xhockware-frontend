@@ -1,7 +1,7 @@
 <template lang="pug">
 .favorites-container(v-if="getFavoriteNews.length")
-    favorite(v-for="(favorite, index) in getFavoriteNews" :key="favorite.source.id" :news="favorite")
-.default-message(v-else) You dont have any favorite news.
+	favorite(v-for="(favorite, index) in getFavoriteNews" :key="favorite.source.id" :news="favorite")
+.default-message(v-if="!getFavoriteNews.length") You dont have any favorite news.
 </template>
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";

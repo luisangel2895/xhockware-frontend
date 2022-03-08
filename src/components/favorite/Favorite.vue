@@ -1,7 +1,8 @@
 <template lang="pug">
 .favorite
 	.favorite__img
-		img(:src="news.urlToImage")
+		.img-container(v-if="news")
+			img(:src="news.urlToImage")
 	.favorite__text
 		.favorite__text-category {{filterCategory()}}
 		.favorite__text-title {{filterLengthText()}}
@@ -20,15 +21,23 @@ export default class Favorite extends Vue {
   news!: News;
 
   filterLengthText(): string {
-    if (this.news.title.length <= 43) {
-      return this.news.title;
+    if (this.news) {
+      if (this.news.title.length <= 43) {
+        return this.news.title;
+      } else {
+        return this.news.title.slice(0, 40) + " ...";
+      }
     } else {
-      return this.news.title.slice(0, 40) + " ...";
+      return "";
     }
   }
   filterCategory(): string {
-    const word = this.news.category;
-    return word.charAt(0).toUpperCase() + word.slice(1);
+    if (this.news) {
+      const word = this.news.category;
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    } else {
+      return "";
+    }
   }
 }
 </script>

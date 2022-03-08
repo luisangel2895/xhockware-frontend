@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in view FavoritesContainer.vue Match with snapshot initial 1`] = `
+<!--v-if-->
+<div class="default-message">You dont have any favorite news.</div>
+`;
+
+exports[`Test in view FavoritesContainer.vue Match with snapshot running 1`] = `
+<div class="favorites-container">
+  <favorite-stub news="[object Object]"></favorite-stub>
+  <favorite-stub news="[object Object]"></favorite-stub>
+</div>
+<!--v-if-->
+`;

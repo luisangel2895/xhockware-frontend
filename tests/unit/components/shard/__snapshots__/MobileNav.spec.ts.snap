@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in component MobileNav.vue Match with snapshot 1`] = `
+<nav>
+  <div class="mobile-nav">
+    <div class="mobile-nav__link paint-icon">
+      <font-awesome-icon-stub icon="far,newspaper"></font-awesome-icon-stub>
+    </div>
+    <div class="mobile-nav__link">
+      <font-awesome-icon-stub icon="far,heart"></font-awesome-icon-stub>
+    </div>
+    <div class="mobile-nav__link link-profile">
+      <font-awesome-icon-stub icon="far,user"></font-awesome-icon-stub>
+    </div>
+  </div>
+  <div class="animation-nav">
+    <div class="animation-nav__line"></div>
+  </div>
+</nav>
+`;

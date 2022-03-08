@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { News } from "@/types/news-response";
 
-export const urlBaseNews = "http://angelorellana.com:8000/v1/news";
+export const urlBaseNews = "http://localhost:8000/v1/news";
 export const defaultWord = "";
 
 export const getNewsService = async (

@@ -44,4 +44,10 @@ export default class NewsContainer extends Vue {}
   font-size: 1.4rem;
   color: $grey_primary;
 }
+// For PC
+@media (min-width: 1300px) {
+  .news-container {
+    margin-top: 230px;
+  }
+}
 </style>
