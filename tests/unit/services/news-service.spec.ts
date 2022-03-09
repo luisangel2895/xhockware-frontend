@@ -6,7 +6,7 @@ import { News } from "@/types/news-response";
 describe("News service", (): void => {
   //   Global variables for news service
   it("Testing general variables to connect to News Service", () => {
-    expect(urlBaseNews as string).toBe("http://angelorellana.com:8000/v1/news");
+    expect(urlBaseNews as string).toBe("http://localhost:8000/v1/news");
     expect(defaultWord as string).toBe("");
   });
   //   Testing get all news

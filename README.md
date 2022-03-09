@@ -1,7 +1,5 @@
 # Challenge for Xhockwave
 
-### ⏩ [Go project in production]()
-
 My apologies for the inconvenience, today I just read "Notes" in the final part of the project and I see that the estimated time for the project was 6 hours or 1 day of work. The project that I want to present to you was developed in 6 days of work.
 Before starting the project I studied framework7 and created a template where framework7 is used within a vue-class-component and typescript environment, here I leave the template in case you want to review it: [Template framework7-typescript](https://github.com/luisangel2895/template-vue3-framework7)
 
@@ -97,10 +95,42 @@ npx cypress run
 
 And finally our in order how the videos of the integration tests performed by cypress were written.
 
+## Run the Project
+
+### Local
+
+To see the local operation of the project it is only necessary to run the project with:
+
+```js
+npm run serve
+```
+
+But in the conexion to the api is very recommended connect with my backend,my backend is the original backend but added with id for the news and defining a category per news.
+
+It is very important to use this backend for testing and for the correct functioning of the application.
+
+[Go to my Backend](https://github.com/luisangel2895/xhockware-backend)
+
+### Production
+
+Also add a static content server to the backend to be able to serve the application, so to test the behavior of the application in production we only have to execute the command:
+
+```js
+node start
+```
+
+With this automatically the application is served in production mode on localhost:8000
+
 ## Extra
 
 I would have also liked to add modules as I mentioned in addition to vuex-persistence-data.
 
-```
 Finally this application meets the standards to become cross-platform and desktop thanks to cordova. Probably tomorrow or the day after tomorrow I will upload in this repository the apk of the Android application and the .exe installer of the Windows desktop application.
-```
+
+Also in the next few days it is likely that I will upload the application and the api server to my personal server to be able to observe the perfect behavior of the application.
+
+# Questions
+
+Please if you have any questions about the project, I will gladly answer you, just write to me at luisangel2895@gmail.com or wasap +51957888660.
+
+And finally, thank you very much for letting me be part of your selection process, I hope you like the project :).
