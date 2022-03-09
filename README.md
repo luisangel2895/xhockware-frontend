@@ -97,6 +97,10 @@ npx cypress run
 
 And finally our in order how the videos of the integration tests performed by cypress were written.
 
-## Other things
+## Extra
 
-me hubiera gustado agregarle como mencione modulos y ademas vuex-persistence-data
+I would have also liked to add modules as I mentioned in addition to vuex-persistence-data.
+
+```
+Finally this application meets the standards to become cross-platform and desktop thanks to cordova. Probably tomorrow or the day after tomorrow I will upload in this repository the apk of the Android application and the .exe installer of the Windows desktop application.
+```
