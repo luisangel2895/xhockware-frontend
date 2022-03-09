@@ -98,8 +98,11 @@ npx cypress run
 And finally our in order how the videos of the integration tests performed by cypress were written.
 
 https://user-images.githubusercontent.com/16966767/157414887-93790f61-f7ec-4741-9891-5986bb17e123.mp4
+
 https://user-images.githubusercontent.com/16966767/157414914-a6980c3e-8bdc-4fd5-8c3d-564a7d7d08e7.mp4
+
 https://user-images.githubusercontent.com/16966767/157415018-0baba9d6-3d24-4573-9302-5753e3ec0244.mp4
+
 https://user-images.githubusercontent.com/16966767/157415059-a465dd08-e93e-491d-a122-03c5666c19e6.mp4
 
 ## Run the Project
