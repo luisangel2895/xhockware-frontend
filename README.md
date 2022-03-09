@@ -28,13 +28,13 @@ Due to time issues, I could not separate the store into modules, so the project 
 
 To develop this project I chose a professional design of a news app, as you can see:
 
-[images-desing-figma]
+![figma](https://user-images.githubusercontent.com/16966767/157414478-387a1156-b252-4bbe-b652-61198b4b42f1.png)
 
 If you want to see the design with greater precision I also leave you the link of this [Go to design figma](https://www.figma.com/file/4CLx5XcrX40iylqT2hA39b/nuntium-news-app?node-id=0%3A1)
 
 I have added some modifications to the design such as animations and a responsive design for tablets and pc since the original design is only for cell phones, finally the design in the 3 devices as follows.
 
-[image-desing-responsive]
+![images-app](https://user-images.githubusercontent.com/16966767/157414523-8b583a07-8fbf-4a11-ae17-28733f5ad894.jpg)
 
 # Project
 
@@ -54,7 +54,7 @@ I also forgot to mention that the app has support for multiple languages with th
 
 In addition, the project was developed as a pwa so you can see the main features of the project offline, I did not have time to take the API data to firestore to make them persistent, so for the moment it loads the main features of the project but not the data .
 
-[image-pwa-project]
+![Screenshot_1](https://user-images.githubusercontent.com/16966767/157414605-b42b7db9-39f5-42fe-8bca-4fcabe002617.png)
 
 ## Unit testing
 
@@ -72,11 +72,11 @@ As you can see all the tests pass satisfactorily:
 npm run test:unit
 ```
 
-[image-test-success]
+![Screenshot_2](https://user-images.githubusercontent.com/16966767/157414696-fe672a8b-2aa5-4a8a-a297-0997d1dcaa48.png)
 
 In addition, by convention, the structure of the main project was followed for the structure of the tests.
 
-[test-convencion-structure]
+![testing-structure](https://user-images.githubusercontent.com/16966767/157414738-a54c68d4-7827-4378-8269-915776abc29c.png)
 
 ## E2E testing
 
@@ -93,7 +93,14 @@ As you can see all the tests pass satisfactorily:
 npx cypress run
 ```
 
+![Screenshot_3](https://user-images.githubusercontent.com/16966767/157414823-35626faf-d059-46f9-85a7-a12a1fa45ddb.png)
+
 And finally our in order how the videos of the integration tests performed by cypress were written.
+
+https://user-images.githubusercontent.com/16966767/157414887-93790f61-f7ec-4741-9891-5986bb17e123.mp4
+https://user-images.githubusercontent.com/16966767/157414914-a6980c3e-8bdc-4fd5-8c3d-564a7d7d08e7.mp4
+https://user-images.githubusercontent.com/16966767/157415018-0baba9d6-3d24-4573-9302-5753e3ec0244.mp4
+https://user-images.githubusercontent.com/16966767/157415059-a465dd08-e93e-491d-a122-03c5666c19e6.mp4
 
 ## Run the Project
 
