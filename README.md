@@ -127,7 +127,7 @@ I would have also liked to add modules as I mentioned in addition to vuex-persis
 
 Finally this application meets the standards to become cross-platform and desktop thanks to cordova. Probably tomorrow or the day after tomorrow I will upload in this repository the apk of the Android application and the .exe installer of the Windows desktop application.
 
-Also in the next few days it is likely that I will upload the application and the api server to my personal server to be able to observe the perfect behavior of the application.
+Also in the next few days it is likely that I will upload the application and the api server to my personal server to be able to observe the perfect behavior of the application in production mode.
 
 # Questions
 
