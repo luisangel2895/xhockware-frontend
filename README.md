@@ -96,3 +96,7 @@ npx cypress run
 ```
 
 And finally our in order how the videos of the integration tests performed by cypress were written.
+
+## Other things
+
+me hubiera gustado agregarle como mencione modulos y ademas vuex-persistence-data
