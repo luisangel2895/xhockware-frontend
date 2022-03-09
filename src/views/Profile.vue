@@ -15,7 +15,7 @@ section.profile
 		.profile__section-text {{ $t("profile.notifications") }}
 		radio
 	.profile__section(@click="goLanguageFragment")
-		.profile__section-text {{ $t("profile.language.title") }}
+		.profile__section-text.change-language-cypress {{ $t("profile.language.title") }}
 		font-awesome-icon(:icon="['fa', 'angle-right']")
 	.profile__section(@click="goTermsFragment")
 		.profile__section-text {{ $t("profile.terms") }}
