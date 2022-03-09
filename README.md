@@ -1,4 +1,4 @@
-# Challenge for Xhockwave
+# Challenge for Xhockware
 
 My apologies for the inconvenience, today I just read "Notes" in the final part of the project and I see that the estimated time for the project was 6 hours or 1 day of work. The project that I want to present to you was developed in 6 days of work.
 Before starting the project I studied framework7 and created a template where framework7 is used within a vue-class-component and typescript environment, here I leave the template in case you want to review it: [Template framework7-typescript](https://github.com/luisangel2895/template-vue3-framework7)
